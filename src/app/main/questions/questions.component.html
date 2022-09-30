@@ -1,0 +1,93 @@
+<div class="header">
+  <p class="company-name">RedBaby</p>
+  <p class="page-indexer"> 1/4 </p>
+</div>
+<hr class="hr-for-header">
+<div class="display-form">
+  <form [formGroup]="infoForm">
+    <div>
+      <label for="firstname">სახელი*</label>
+      <br>
+      <input type="text" *ngIf="lastName !== null" [(ngModel)]="firstName" id="firstname" formControlName="firstname">
+      <div *ngIf="infoForm.get('firstname').invalid &&
+        infoForm.get('firstname').errors &&
+        (infoForm.get('firstname').dirty || infoForm.get('firstname').touched)">
+        <small style="color: red" class="text-danger"
+               *ngIf="infoForm.get('firstname').hasError('required')">
+          სახელის ველი არ უნდა იყოს ცარიელი.
+        </small>
+        <small style="color: red" class="text-danger"
+               *ngIf="infoForm.get('firstname').hasError('minlength')">
+          სახელის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან.
+        </small>
+        <small style="color: red" class="text-danger"
+               *ngIf="infoForm.get('firstname').hasError('maxlength')">
+          სახელის ველი უნდა შედგებოდეს მაქსიმუმ 56 სიმბოლოსგან.
+        </small>
+        <small style="color: red" class="text-danger"
+               *ngIf="infoForm.get('firstname').hasError('pattern')">
+          სახელის ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს.
+        </small>
+      </div>
+    </div>
+    <br>
+  <div style="margin-top: 20px">
+    <label for="lastname">გვარი*</label>
+    <br>
+    <input *ngIf="lastName !== null" [(ngModel)]="lastName" type="text" id="lastname" formControlName="lastname" value="lastname">
+    <br>
+    <div *ngIf="infoForm.get('lastname').invalid &&
+        infoForm.get('lastname').errors &&
+        (infoForm.get('lastname').dirty || infoForm.get('lastname').touched)">
+      <small style="color: red" class="text-danger"
+             *ngIf="infoForm.get('lastname').hasError('required')">
+        გვარის ველი არ უნდა იყოს ცარიელი.
+      </small>
+      <small style="color: red" class="text-danger"
+             *ngIf="infoForm.get('lastname').hasError('minlength')">
+        გვარის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან.
+      </small>
+      <small style="color: red" class="text-danger"
+             *ngIf="infoForm.get('lastname').hasError('maxlength')">
+        გვარის ველი უნდა შედგებოდეს მაქსიმუმ 56 სიმბოლოსგან.
+      </small>
+      <small style="color: red" class="text-danger"
+             *ngIf="infoForm.get('lastname').hasError('pattern')">
+        გვარის ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს.
+      </small>
+    </div>
+  </div>
+    <div style="margin-top: 40px">
+      <label for="email">მეილი*</label>
+      <br>
+      <input
+        *ngIf="lastName !== null" [(ngModel)]="userEmail"
+        [class.is-invalid]="(infoForm.get('email').touched || infoForm.get('email').dirty) && infoForm.get('email').invalid"
+        class="form-control" type="text" id="email" formControlName="email">
+      <br>
+      <small
+        class="invalid-feedback" style="color: red"
+        *ngIf="(infoForm.get('email').touched || infoForm.get('email').dirty) && infoForm.get('email').invalid"
+      >
+        გთხოვთ დარეგისტრირდეთ Redberry-ს მეილით (youremail@redberry.ge)
+      </small>
+    </div>
+    <div style="margin-top: 50px">
+      <hr class="small-content-hr" style="margin-left: 0px">
+      <p class="small-content">*ით მონიშნული ველების შევსება სავალდებულოა</p>
+    </div>
+  </form>
+  <img src="assets/images/star.png" alt="people" style="width: 904px;height: 831px;margin-left: 40%; margin-top: -30%">
+</div>
+
+<button type="submit"  class="next" [disabled]="infoForm.invalid" (click)="onSubmit()" style="cursor: pointer;background: transparent;border: none;">
+  <p style="color: black"> > </p>
+</button>
+
+
+
+
+
+
+
+

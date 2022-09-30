@@ -1,0 +1,57 @@
+
+.company-name{
+  color: #FE3B1F;
+  font-weight: bold;
+  font-size: x-large;
+  font-family: "BPG No9", sans-serif;
+
+}
+.page-indexer{
+  font-weight: bold;
+  font-size: x-large;
+  font-family: "BPG No9", sans-serif;
+
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15%;
+  margin-right:15%;
+  margin-top: 5%;
+  width: 70%;
+}
+.hr-for-header{
+  margin-left: 15%;
+  margin-right:15%;
+  width: 70%;
+}
+
+.next{
+  margin-left: 65%;
+  font-size: xxx-large;
+  font-weight: lighter;
+  margin-top: -30px;
+}
+.display-form{
+  margin-left: 15%;
+  margin-top: 3%;
+}
+input{
+  width: 513px;
+  height: 30px;
+}
+label{
+  font-weight: bold;
+  font-size: medium;
+}
+.for-padding{
+  margin-top: 20px;
+}
+.small-content{
+  width: 250px;
+  font-weight: lighter;
+  color: gray;
+}
+.small-content-hr{
+  width: 250px;
+}

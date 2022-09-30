@@ -1,0 +1,101 @@
+<div class="header">
+  <p class="company-name">RedBaby</p>
+  <p class="page-indexer"> 3/4 </p>
+</div>
+<hr class="hr-for-header">
+<div class="display-form">
+  <div style="margin-left: 200%; margin-top: -20%;">
+    <img src="assets/images/doc.png" alt="doctor" style="width: 904px;height: 731px;">
+    <button type="submit"  class="previous" (click)="onPrevClick()" style="cursor: pointer;background: transparent;border: none;">
+      <p style="color: black"> < </p>
+    </button>
+
+    <button type="submit"  class="next" (click)="onSubmit()" style="cursor: pointer;background: transparent;border: none;">
+      <p style="color: black"> > </p>
+    </button>
+  </div>
+  <div style="margin-top: -270%; width: 500px">
+    <h4 class="for-padding-h4">უკვე აცრილი ხარ?*</h4>
+    <div class="custom-control custom-radio">
+      <input
+        [value]="0" [(ngModel)]="isFirstVisible" name="isFirstVisible" type="radio" [checked]="!isSelected">
+      <label class="custom-control-label">კი</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input
+        [value]="1" [(ngModel)]="isFirstVisible" name="isFirstVisible" type="radio" [checked]="!isSelected">
+      <label class="custom-control-label">არა</label>
+    </div>
+    <!--   კი აცრილი-->
+    <div *ngIf="isFirstVisible == 0">
+      <h4 class="for-padding-h4">აირჩიე რა ეტაპზე ხარ*</h4>
+      <div class="custom-control custom-radio">
+        <input
+          [value]="1" [(ngModel)]="isVisible" name="isVisible" type="radio" [checked]="!isSelected">
+        <label class="custom-control-label">პირველი დოზა და დარეგისტრირებული ვარ მეორეზე</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input
+          [value]="0" [(ngModel)]="isVisible" name="isVisible" type="radio" [checked]="!isSelected">
+        <label class="custom-control-label" >სრულად აცრილი ვარ</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input
+          [value]="2" [(ngModel)]="isVisible" name="isVisible" type="radio" [checked]="isSelected">
+        <label class="custom-control-label" >პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე</label>
+      </div>
+
+      <div *ngIf="isVisible == 2">
+        <p class="margin-from">
+          რომ არ გადადო, ბარემ ახლავე დარეგისტრირდი
+          <a target="_blank" href="https://booking.moh.gov.ge/" >https://booking.moh.gov.ge/</a>
+        </p>
+      </div>
+    </div>
+
+    <!--   არა აცრილი-->
+
+    <div *ngIf="isFirstVisible == 1">
+        <h4 class="for-padding-h4">რას ელოდები?*</h4>
+        <div class="custom-control custom-radio">
+          <input
+            [value]="0" [(ngModel)]="isSecondVisible" name="isSecondVisible" type="radio" [checked]="!isSelected">
+          <label class="custom-control-label">დარეგისტრირებული ვარ და ველოდები რიცხვს</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input
+            [value]="1" [(ngModel)]="isSecondVisible" name="isSecondVisible" type="radio" [checked]="!isSelected">
+          <label class="custom-control-label" >არ ვგეგმავ</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input
+            [value]="2" [(ngModel)]="isSecondVisible" name="isVisible" type="radio" [checked]="isSelected">
+          <label class="custom-control-label" >გადატანილი მაქვს და ვგეგმავ აცრას</label>
+        </div>
+      <div *ngIf="isSecondVisible == 1">
+        <p class="margin-from">
+          👉
+          <a target="_blank" href="https://booking.moh.gov.ge/">https://booking.moh.gov.ge/</a>
+        </p>
+      </div>
+      <div *ngIf="isSecondVisible == 2">
+        <p class="margin-from">
+          ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის გაკეთება.
+        </p>
+        <p class="margin-from">
+          👉 რეგისტრაციის ბმული <a href="https://booking.moh.gov.ge/">https://booking.moh.gov.ge/</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

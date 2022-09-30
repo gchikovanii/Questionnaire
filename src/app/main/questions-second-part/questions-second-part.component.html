@@ -1,0 +1,73 @@
+<div class="header">
+  <p class="company-name">RedBaby</p>
+  <p class="page-indexer"> 2/4 </p>
+</div>
+<hr class="hr-for-header">
+<div class="display-form">
+  <div style="margin-left: 200%; margin-top: -20%;">
+    <img src="assets/images/sick.png" alt="sick person" style="width: 904px;height: 731px;">
+    <button type="submit"  class="previous" (click)="onPrevClick()" style="cursor: pointer;background: transparent;border: none;">
+      <p style="color: black"> < </p>
+    </button>
+
+    <button type="submit"  class="next" [disabled]="infoForm.invalid" (click)="onSubmit()" style="cursor: pointer;background: transparent;border: none;">
+      <p style="color: black"> > </p>
+    </button>
+  </div>
+      <div style="margin-top: -270%">
+        <h4 class="for-padding-h4">გაქვს გადატანილი Covid-19?*</h4>
+        <div class="custom-control custom-radio">
+          <input
+            [value]="0" [(ngModel)]="isFirstVisible" name="isFirstVisible" type="radio" [checked]="!isSelected">
+          <label class="custom-control-label">კი</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input
+            [value]="1" [(ngModel)]="isFirstVisible" name="isFirstVisible" type="radio" [checked]="!isSelected">
+          <label class="custom-control-label">არა</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input
+            [value]="2" [(ngModel)]="isFirstVisible" name="isFirstVisible" type="radio" [checked]="!isSelected">
+          <label class="custom-control-label">ახლა არ მაქვს</label>
+        </div>
+
+        <div *ngIf="isFirstVisible == 0 ||isFirstVisible == 1 ||isFirstVisible == 2">
+          <h4 class="for-padding-h4">ანტისხეულების ტესტი გაქვს გაკეთებული?*</h4>
+          <div class="custom-control custom-radio">
+            <input
+              [value]="0" [(ngModel)]="isVisible" name="isVisible" type="radio" [checked]="!isSelected">
+            <label class="custom-control-label">კი</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input
+              [value]="1" [(ngModel)]="isVisible" name="isVisible" type="radio" [checked]="isSelected">
+            <label class="custom-control-label" >არა</label>
+          </div>
+
+        </div>
+
+        <div *ngIf="isVisible == 0 || isVisible == 1">
+          <h4 class="for-padding-h4">თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა*</h4>
+          <div class="custom-control custom-radio">
+          </div>
+          <div class="custom-control custom-radio">
+            <form [formGroup]="infoForm">
+              <input class="input-text" type="number" id="date" value="date" placeholder="რიცხვი" formControlName="date">
+              <br>
+              <input class="input-text for-padding" type="number" id="count" value="count" placeholder="რაოდენობა" formControlName="count">
+            </form>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+
+
+
+
+
+
+
+

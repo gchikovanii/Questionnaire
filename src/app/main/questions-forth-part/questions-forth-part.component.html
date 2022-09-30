@@ -1,0 +1,101 @@
+<div class="header">
+  <p class="company-name">RedBaby</p>
+  <p class="page-indexer"> 4/4 </p>
+</div>
+<hr class="hr-for-header">
+<div class="display-form">
+  <div style="margin-left: 200%; margin-top: -20%;">
+    <img src="assets/images/office.png" alt="office" style="width: 904px;height: 731px;">
+  </div>
+  <div style="margin-top: -270%">
+    <p style="margin-top: 115px">
+      რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი თანამშრომლები ქმნით, ბევრისთვის არის და ყოფილა წლების განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი, ბევრისთვის კი — ჩვენთან გადმოსვლის.
+    </p>
+  <p style="margin-top: 10px">
+    პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.
+  </p>
+
+    <h4 class="for-padding-h4" style="margin-top: 25px">რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*</h4>
+    <div class="custom-control custom-radio">
+      <input
+        [value]="0" [(ngModel)]="isFirstVisible" name="isFirstVisible" type="radio" [checked]="!isSelected">
+      <label class="custom-control-label">კვირაში ორჯერ</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input
+        [value]="1" [(ngModel)]="isFirstVisible" name="isFirstVisible" type="radio" [checked]="!isSelected">
+      <label class="custom-control-label">კვირაში ერთხელ</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input
+        [value]="2" [(ngModel)]="isFirstVisible" name="isFirstVisible" type="radio" [checked]="!isSelected">
+      <label class="custom-control-label">ორ კვირაში ერთხელ</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input
+        [value]="3" [(ngModel)]="isFirstVisible" name="isFirstVisible" type="radio" [checked]="!isSelected">
+      <label class="custom-control-label">თვეში ერთხელ</label>
+    </div>
+
+
+    <h4 class="for-padding-h4" style="margin-top: 25px">კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*</h4>
+    <div class="custom-control custom-radio">
+      <input
+        [value]="0" [(ngModel)]="isSecondValue" name="isSecondValue" type="radio" [checked]="!isSelected">
+      <label class="custom-control-label">0</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input
+        [value]="1" [(ngModel)]="isSecondValue" name="isSecondValue" type="radio" [checked]="!isSelected">
+      <label class="custom-control-label">1</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input
+        [value]="2" [(ngModel)]="isSecondValue" name="isSecondValue" type="radio" [checked]="!isSelected">
+      <label class="custom-control-label">2</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input
+        [value]="3" [(ngModel)]="isSecondValue" name="isSecondValue" type="radio" [checked]="!isSelected">
+      <label class="custom-control-label">3</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input
+        [value]="4" [(ngModel)]="isSecondValue" name="isSecondValue" type="radio" [checked]="!isSelected">
+      <label class="custom-control-label">4</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input
+        [value]="5" [(ngModel)]="isSecondValue" name="isSecondValue" type="radio" [checked]="!isSelected">
+      <label class="custom-control-label">5</label>
+    </div>
+
+
+
+    <h4 class="for-padding-h4" style="margin-top: 25px">რას ფიქრობ ფიზიკურ შეკრებებზე?</h4>
+    <textarea  id="textarea1" name="textarea1" rows="10" cols="50"></textarea>
+
+    <h4 class="for-padding-h4" style="margin-top: 25px">რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?</h4>
+    <textarea  id="textarea2" name="textarea2" rows="15" cols="50"></textarea>
+    <button type="button" (click)="onSubmit()" class="style-button" style="cursor:pointer;">
+      დასრულება
+    </button>
+  </div>
+</div>
+
+
+
+<div class="button-mix">
+  <button type="submit"  class="previous" (click)="onPrevClick()" style="cursor: pointer;background: transparent;border: none; width: 100px">
+    <p style="color: black"> < </p>
+  </button>
+</div>
+
+
+
+
+
+
+
+
+

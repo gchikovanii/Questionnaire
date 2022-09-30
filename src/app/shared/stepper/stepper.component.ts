@@ -1,0 +1,25 @@
+import {Component, Input, OnInit} from '@angular/core';
+import {CdkStepper} from "@angular/cdk/stepper";
+import {FormBuilder, Validators} from '@angular/forms';
+
+@Component({
+  selector: 'app-stepper',
+  templateUrl: './stepper.component.html',
+  styleUrls: ['./stepper.component.scss'],
+  providers: [{provide: CdkStepper, useExisting: StepperComponent}]
+})
+export class StepperComponent implements OnInit {
+  firstFormGroup = this._formBuilder.group({
+    firstCtrl: ['', Validators.required],
+  });
+  secondFormGroup = this._formBuilder.group({
+    secondCtrl: ['', Validators.required],
+  });
+  isLinear = false;
+
+  constructor(private _formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+  }
+
+}
